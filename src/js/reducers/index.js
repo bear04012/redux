@@ -4,7 +4,10 @@ const initialState = {
 };
 function rootReducer(state = initialState, action) {
   if (action.type === ADD_ARTICLE) {
-    state.articles.push(action.payload);
+    // state.articles.push(action.payload);
+    return {
+      articles: [...state.articles, action.payload]
+    }
   }
   return state;
 }
